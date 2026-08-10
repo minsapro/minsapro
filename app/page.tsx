@@ -1,5 +1,4 @@
-import { prisma } from "../../../../lib_prisma";
-
+import prisma from '../lib_prisma'
 export default async function NewArticle() {
   const [categories, users] = await Promise.all([
     prisma.category.findMany({ orderBy: { name: "asc" } }),
