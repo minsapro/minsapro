@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "../../../lib_prisma";
-
+import prisma from '../../../lib_prisma'
 export async function GET() {
   const articles = await prisma.article.findMany({
     include: { category: true, author: true },
